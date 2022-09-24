@@ -9,13 +9,14 @@ export default NextAuth({
   cached MongoDB connection in /lib/mongodb.js
   and pass the connection to the adapter
   */
-  adapter: MongoDBAdapter(clientPromise),
+  // adapter: MongoDBAdapter(clientPromise),
 
   /* Or use a self-made adapter such as the mine,
-   which only requires you to pass in the connection string
-   
+  which only requires you to pass in the connection string
+
   adapter: MongooseAdapter(process.env.MONGODB_URI),
   */
+ adapter: MongooseAdapter(process.env.MONGODB_URI),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
